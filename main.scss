@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+// ## Colors
+// ### Primary
+
+$cyan: hsl(180, 66%, 49%);
+$dark-violet: hsl(257, 27%, 26%);
+
+// ### Secondary -
+$red: hsl(0, 87%, 67%);
+// ### Neutral
+
+$light-gray: hsl(230, 25%, 95%);
+$gray: hsl(0, 0%, 75%);
+$grayish-violet: hsl(257, 7%, 63%);
+$very-dark-violet: hsl(260, 8%, 14%);
+$very-dark-blue: hsl(255, 11%, 22%);
+// ## Typography
+$font-stack: Poppins, sans-serif;
+$font-size: 18px;
+
+.btn {
+  display: inline-block;
+  font-weight: 700;
+  color: white;
+  background-color: $cyan;
+
+  border: none;
+}
+.link-btn {
+  padding: 10px 24px;
+  border-radius: 23px;
+}
+.btn-btn {
+  border-radius: 8px;
+  padding: 0 32px;
+}
+
+body {
+  font: 100% $font-stack;
+  color: $grayish-violet;
+}
+
+header {
+  padding: 48px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1110px;
+  margin: 0 85px;
+
+  a {
+    color: $grayish-violet;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  nav {
+    margin-left: 46px;
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+
+      li {
+        margin-right: 32px;
+      }
+    }
+  }
+
+  .signup-actions {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+
+    .login {
+    }
+
+    .sign-up {
+      margin-left: 36px;
+    }
+  }
+}
+
+main {
+  background-color: $light-gray;
+  .intro {
+    background-color: white;
+    display: flex;
+    align-items: center;
+
+    .intro-content {
+      margin-left: 85px;
+      width: 50%;
+
+      h1 {
+        font-size: 5rem;
+        line-height: 1.1;
+        color: $very-dark-blue;
+        letter-spacing: -2.6px;
+      }
+
+      p {
+        font-size: 22px;
+        letter-spacing: 0.2px;
+      }
+
+      .get-started {
+        font-size: 1.1rem;
+        padding: 12px 36px;
+        border-radius: 32px;
+        margin: 2rem 0;
+      }
+    }
+
+    .illustration {
+      position: relative;
+      right: -30px;
+    }
+  }
+  .shortener {
+    // background-color: $light-gray;
+    max-width: 1110px;
+    margin: 0 85px;
+    .form {
+      display: flex;
+      padding: 52px 64px;
+      border-radius: 12px;
+      background-color: $dark-violet;
+      background-image: url(./images/bg-shorten-desktop.svg);
+
+      label {
+        background: white;
+        border-radius: 8px;
+        padding: 0 32px;
+        width: 100%;
+        height: 64px;
+        display: flex;
+        flex: 1;
+
+        input {
+          border: none;
+          font-size: 1.2rem;
+          width: 100%;
+        }
+      }
+
+      button {
+        border: none;
+        border-radius: 8px;
+        font-size: 1.2rem;
+        margin-left: 24px;
+        padding: 0 32px;
+        // padding: 24px 42px;
+        height: 64px;
+      }
+    }
+    .url-list {
+      display: flex;
+      flex-direction: column;
+      .url-item {
+        background-color: white;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 16px;
+        display: flex;
+        justify-content: space-between;
+        p {
+          flex: 1;
+        }
+        a {
+        }
+        .btn-btn {
+          width: 103px;
+          height: 40px;
+          padding: 8px 16px;
+          border-radius: 5px;
+          margin-left: 16px;
+        }
+      }
+    }
+  }
+
+  .statistics {
+  }
+
+  .boost {
+    background-color: $dark-violet;
+  }
+}
+
+footer {
+  background-color: $very-dark-violet;
+}

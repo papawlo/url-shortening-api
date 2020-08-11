@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 700;
+  color: white;
+  background-color: #2acfcf;
+  border: none;
+}
+
+.link-btn {
+  padding: 10px 24px;
+  border-radius: 23px;
+}
+
+.btn-btn {
+  border-radius: 8px;
+  padding: 0 32px;
+}
+
+body {
+  font: 100% Poppins, sans-serif;
+  color: #9e9aa7;
+}
+
+header {
+  padding: 48px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1110px;
+  margin: 0 85px;
+}
+header a {
+  color: #9e9aa7;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+header nav {
+  margin-left: 46px;
+}
+header nav .nav-links {
+  display: flex;
+  list-style: none;
+}
+header nav .nav-links li {
+  margin-right: 32px;
+}
+header .signup-actions {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+}
+header .signup-actions .sign-up {
+  margin-left: 36px;
+}
+
+main {
+  background-color: #eff0f5;
+}
+main .intro {
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+main .intro .intro-content {
+  margin-left: 85px;
+  width: 50%;
+}
+main .intro .intro-content h1 {
+  font-size: 5rem;
+  line-height: 1.1;
+  color: #35323e;
+  letter-spacing: -2.6px;
+}
+main .intro .intro-content p {
+  font-size: 22px;
+  letter-spacing: 0.2px;
+}
+main .intro .intro-content .get-started {
+  font-size: 1.1rem;
+  padding: 12px 36px;
+  border-radius: 32px;
+  margin: 2rem 0;
+}
+main .intro .illustration {
+  position: relative;
+  right: -30px;
+}
+main .shortener {
+  max-width: 1110px;
+  margin: 0 85px;
+}
+main .shortener .form {
+  display: flex;
+  padding: 52px 64px;
+  border-radius: 12px;
+  background-color: #3b3054;
+  background-image: url(./images/bg-shorten-desktop.svg);
+}
+main .shortener .form label {
+  background: white;
+  border-radius: 8px;
+  padding: 0 32px;
+  width: 100%;
+  height: 64px;
+  display: flex;
+  flex: 1;
+}
+main .shortener .form label input {
+  border: none;
+  font-size: 1.2rem;
+  width: 100%;
+}
+main .shortener .form button {
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  margin-left: 24px;
+  padding: 0 32px;
+  height: 64px;
+}
+main .shortener .url-list {
+  display: flex;
+  flex-direction: column;
+}
+main .shortener .url-list .url-item {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+main .shortener .url-list .url-item p {
+  flex: 1;
+}
+main .shortener .url-list .url-item .btn-btn {
+  width: 103px;
+  height: 40px;
+  padding: 8px 16px;
+  border-radius: 5px;
+  margin-left: 16px;
+}
+main .boost {
+  background-color: #3b3054;
+}
+
+footer {
+  background-color: #232127;
+}
+
+/*# sourceMappingURL=style.css.map */
