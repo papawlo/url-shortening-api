@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- <html lang="en" class="debug"> -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,10 +27,15 @@
           <li><a href="#">Pricing</a></li>
           <li><a href="#">Resources</a></li>
         </ul>
+        <div class="signup-actions">
+          <a href="#" class="login">Login</a>
+          <a href="#" class="btn link-btn sm sign-up">Sign Up</a>
+        </div>
       </nav>
-      <div class="signup-actions">
-        <a href="#" class="login">Login</a>
-        <a href="#" class="btn link-btn sm sign-up">Sign Up</a>
+      <div class="burger">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
       </div>
     </header>
     <main>
@@ -38,16 +44,18 @@
           <div class="intro-content">
             <h1>More than just shorter links</h1>
             <p>
-              Build your brand’s recognition and get detailed<br />
-              insights on how your links are performing.
+              Build your brand’s recognition and get detailed insights on how
+              your links are performing.
             </p>
             <a href="#" class="get-started btn link-btn lg">Get Started</a>
           </div>
-          <img
-            src="./images/illustration-working.svg"
-            alt=""
-            class="illustration"
-          />
+          <div class="illustration-wrapper">
+            <img
+              src="./images/illustration-working.svg"
+              alt=""
+              class="illustration"
+            />
+          </div>
         </div>
       </div>
       <div class="shortener">
@@ -59,9 +67,10 @@
               id="url"
               class="url-input"
               placeholder="Shorten a link here..."
+              required
             />
             <span class="error-msg" id="error-msg" aria-live="polite"
-              >Please add a valid link</span
+              >Please add a link</span
             >
           </label>
           <button type="submit" class="btn btn-btn lg submit-btn">
@@ -70,14 +79,14 @@
           <span hidden>Please add a valid link</span>
         </form>
         <div class="url-list">
-          <!-- <div class="url-item">
+          <div class="url-item">
             <p>http://www.frontendmentor.io</p>
             <a href="#" class="url-link">http://rel.ink/dsASa9d7</a>
             <button
               id="btn-1"
               type="button"
-              class="copy-btn btn btn-btn sm"
-              value="teste"
+              class="copy-btn btn btn-btn sm tooltiptext"
+              value="teste de copiar"
             >
               Copy
             </button>
@@ -95,7 +104,7 @@
             <button type="button" class="copy-btn btn btn-btn sm hover">
               Copy
             </button>
-          </div> -->
+          </div>
         </div>
       </div>
       <div class="statistics">

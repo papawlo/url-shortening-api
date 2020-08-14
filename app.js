@@ -4,7 +4,7 @@ const getUrl = `GET https://rel.ink/api/links/hashid`; //get url by hashid
 
 const form = document.getElementById('form');
 const urlInput = document.getElementById('url');
-const urlError = document.getElementById('error-msg');
+const urlErrorMsg = document.getElementById('error-msg');
 const urlList = document.querySelector(".url-list");
 const copyButtons = document.querySelectorAll(".copy-btn");
 
@@ -31,9 +31,12 @@ const addToList = (hashid, url) => {
     // console.log(div);
     // urlList.append(div);
     const btn = div.querySelector('.copy-btn');
-    console.log(btn);
+    // console.log(btn);
+    btn.className = "copied";
+    btn.innerHTML = "Copied";
     btn.addEventListener('click', event => {
         console.log('event added');
+
         // var targetElement = event.target || event.srcElement;
         copyToClipboard(event.target.value);
     });
@@ -58,6 +61,8 @@ const copyToClipboard = str => {
 copyButtons.forEach(btn => {
 
     btn.addEventListener('click', event => {
+        btn.classList.add("copied");
+        btn.innerHTML = "Copied";
         // var targetElement = event.target || event.srcElement;
         copyToClipboard(event.target.value);
     });
@@ -68,15 +73,23 @@ urlInput.addEventListener("input", function (event) {
     // Each time the user types something, we check if the
     // form fields are valid.
 
-    if (urlInput.validity.valid) {
-        // In case there is an error message visible, if the field
-        // is valid, we remove the error message.
-        urlError.innerHTML = ''; // Reset the content of the message
-        urlError.className = 'error-msg'; // Reset the visual state of the message
-        // iconError.className = 'icon-error'; // Reset the visual state of the message
+    if (urlInput.value && urlInput.value.trim().length > 0) {
+        if (urlInput.validity.valid) {
+            // In case there is an error message visible, if the field
+            // is valid, we remove the error message.
+            urlInput.classList.remove('is-invalid');
+            urlErrorMsg.innerHTML = ''; // Reset the content of the message
+            urlErrorMsg.className = 'error-msg'; // Reset the visual state of the message
+
+        } else {
+            // If there is still an error, show the correct error
+            showError();
+        }
     } else {
-        // If there is still an error, show the correct error
-        showError();
+        urlInput.classList.remove('is-invalid');
+        urlErrorMsg.innerHTML = ''; // Reset the content of the message
+        urlErrorMsg.className = 'error-msg'; // Reset the visual state of the message
+
     }
 
 });
@@ -125,13 +138,14 @@ function showError() {
     if (!urlInput.value || urlInput.value.trim().length === 0) {
         // If the field is empty
         // display the following error message.
-        urlError.textContent = 'You need to enter an url address.';
+        urlErrorMsg.textContent = 'Please add a link';
     } else if (url.validity.typeMismatch) {
         // If the field doesn't contain an url address
         // display the following error message.
-        urlError.textContent = 'Please provide a valid url.';
+        urlErrorMsg.textContent = 'Please provide a valid url.';
     }
 
     // Set the styling appropriately
-    urlError.className = 'error-msg';
+    urlInput.classList.add('is-invalid');
+    urlErrorMsg.className = 'error-msg is-invalid';
 }
