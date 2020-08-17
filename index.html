@@ -21,7 +21,7 @@
       <div class="logo">
         <img src="./images/logo.svg" alt="logo" />
       </div>
-      <nav>
+      <nav class="nav">
         <ul class="nav-links">
           <li><a href="#">Features</a></li>
           <li><a href="#">Pricing</a></li>
@@ -47,7 +47,9 @@
               Build your brand’s recognition and get detailed insights on how
               your links are performing.
             </p>
-            <a href="#" class="get-started btn link-btn lg">Get Started</a>
+            <a href="#shortener" class="get-started btn link-btn lg"
+              >Get Started</a
+            >
           </div>
           <div class="illustration-wrapper">
             <img
@@ -57,8 +59,15 @@
             />
           </div>
         </div>
+        <!-- <div class="illustration-wrapper-desktop">
+          <img
+            src="./images/illustration-working.svg"
+            alt=""
+            class="illustration"
+          />
+        </div> -->
       </div>
-      <div class="shortener">
+      <div class="shortener" id="shortener">
         <form action="#" method="POST" class="form" id="form" novalidate>
           <label for="url">
             <input
@@ -79,7 +88,7 @@
           <span hidden>Please add a valid link</span>
         </form>
         <div class="url-list">
-          <div class="url-item">
+          <!-- <div class="url-item">
             <p>http://www.frontendmentor.io</p>
             <a href="#" class="url-link">http://rel.ink/dsASa9d7</a>
             <button
@@ -104,7 +113,7 @@
             <button type="button" class="copy-btn btn btn-btn sm hover">
               Copy
             </button>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="statistics">
@@ -161,7 +170,7 @@
       </div>
       <div class="boost">
         <h2>Boost your links today</h2>
-        <a href="#" class="get-started btn link-btn lg">Get Started</a>
+        <a href="#shortener" class="get-started btn link-btn lg">Get Started</a>
       </div>
     </main>
     <footer>

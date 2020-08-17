@@ -17,6 +17,12 @@ img {
   --grayish-violet: #9e9aa7;
   --very-dark-violet: #232127;
   --very-dark-blue: #35323e;
+  --padding: 36px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
 }
 
 .debug * {
@@ -53,6 +59,7 @@ a:hover {
   padding: 0;
   font-weight: bold;
   color: #ffffff;
+  cursor: pointer;
 }
 .btn:hover, .btn.hover {
   background: #9ce3e2;
@@ -104,15 +111,18 @@ a:hover {
 body {
   font: 100% Poppins, sans-serif;
   color: #9e9aa7;
+  min-height: 100vh;
 }
 
 header {
+  max-width: 1110px;
+  margin: 0 auto;
   padding: 48px 0;
+  padding-left: var(--padding);
+  padding-right: var(--padding);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1110px;
-  margin: 0 auto;
 }
 header .logo {
   display: flex;
@@ -124,6 +134,7 @@ header nav {
   justify-content: space-between;
   margin-left: 46px;
   flex: 1;
+  transition: all 0.3s ease;
 }
 header nav .nav-links {
   display: flex;
@@ -155,11 +166,21 @@ header .burger {
   flex-direction: column;
   justify-content: space-around;
 }
+header .burger.toggle .line1 {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+header .burger.toggle .line2 {
+  opacity: 0;
+}
+header .burger.toggle .line3 {
+  transform: rotate(45deg) translate(-6px, -6px);
+}
 header .burger .line {
   width: 24px;
   height: 3px;
   background-color: #9e9aa7;
   margin: 3px 0;
+  transition: all 0.3s ease;
 }
 header .burger:hover .line {
   background-color: #3b3054;
@@ -174,14 +195,18 @@ main .intro {
   padding-bottom: 154px;
 }
 main .intro .intro-wrapper {
+  max-width: 1110px;
+  margin: 0 auto;
+  padding-left: var(--padding);
+  padding-right: var(--padding);
   display: flex;
   align-items: center;
-  margin: 0 auto;
-  max-width: 1110px;
+  overflow-x: hidden;
+  position: relative;
 }
 main .intro .intro-wrapper .intro-content {
-  width: 50%;
-  flex: 1;
+  max-width: 100%;
+  width: 565px;
 }
 main .intro .intro-wrapper .intro-content h1 {
   color: #35323e;
@@ -201,11 +226,25 @@ main .intro .intro-wrapper .intro-content .get-started {
 }
 main .intro .intro-wrapper .illustration-wrapper {
   position: relative;
+  /* width: 100%; */
+  margin-right: -790px;
 }
 main .intro .intro-wrapper .illustration-wrapper .illustration {
-  position: absolute;
+  display: block;
+}
+main .intro .illustration-wrapper-desktop {
+  position: relative;
+  width: 30%;
+  margin-left: 30px;
+}
+main .intro .illustration-wrapper-desktop .illustration {
+  position: relative;
+  max-width: none;
+  height: 482px;
 }
 main .shortener {
+  padding-left: var(--padding);
+  padding-right: var(--padding);
   max-width: 1110px;
   margin: 0 auto;
 }
@@ -292,6 +331,8 @@ main .statistics {
   max-width: 1110px;
   margin: 0 auto;
   padding-top: 104px;
+  padding-left: var(--padding);
+  padding-right: var(--padding);
 }
 main .statistics-header h2 {
   font-size: 38px;
@@ -371,6 +412,8 @@ main .boost {
   justify-content: center;
   align-items: center;
   gap: 20px;
+  padding-left: var(--padding);
+  padding-right: var(--padding);
   background-color: #3b3054;
   background-image: url(./images/bg-boost-desktop.svg);
   background-repeat: no-repeat;
@@ -393,9 +436,11 @@ footer .footer-wrapper {
   max-width: 1110px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 4fr 5fr 3fr;
+  grid-template-columns: 3fr 6fr 3fr;
   padding-top: 70px;
   padding-bottom: 104px;
+  padding-left: var(--padding);
+  padding-right: var(--padding);
 }
 footer .footer-wrapper .nav-footer {
   display: grid;
@@ -443,6 +488,7 @@ footer .footer-wrapper .social-icons a:hover {
 @media screen and (max-width: 768px) {
   header {
     padding: 40px 24px 24px;
+    position: relative;
   }
   header .burger {
     display: flex;
@@ -451,24 +497,23 @@ footer .footer-wrapper .social-icons a:hover {
     position: absolute;
     background-color: #3b3054;
     margin: 0;
-    top: 96px;
+    top: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    width: 100%;
-    width: 327px;
-    height: 383px;
+    width: calc(100% - 48px);
     border-radius: 10px;
     padding: 38px 24px;
     opacity: 0;
     pointer-events: none;
+    z-index: 2;
   }
   header nav a {
     font-size: 19px;
     line-height: 28px;
     /* identical to box height */
     letter-spacing: -0.035em;
-    color: #FFFFFF;
+    color: #ffffff;
   }
   header nav .nav-links {
     flex-direction: column;
@@ -485,6 +530,9 @@ footer .footer-wrapper .social-icons a:hover {
     align-items: center;
     justify-content: space-around;
   }
+  header nav .signup-actions .login {
+    margin-top: 28px;
+  }
   header nav .signup-actions .sign-up {
     margin: 0;
     margin-top: 24px;
@@ -494,22 +542,23 @@ footer .footer-wrapper .social-icons a:hover {
     line-height: 28px;
     /* identical to box height */
     letter-spacing: -0.035em;
-    color: #FFFFFF;
+    color: #ffffff;
   }
   header nav.nav-active {
-    opacity: 1;
+    opacity: 3;
     pointer-events: all;
   }
 
   main .intro .intro-wrapper {
-    position: relative;
+    position: unset;
+    flex-direction: column;
     flex-flow: column-reverse;
-    padding: 337px 24px 0;
-    overflow-x: hidden;
+    overflow: hidden;
   }
   main .intro .intro-wrapper .intro-content {
     width: 100%;
     text-align: center;
+    margin-top: 40px;
   }
   main .intro .intro-wrapper .intro-content h1 {
     width: 100%;
@@ -527,15 +576,16 @@ footer .footer-wrapper .social-icons a:hover {
     letter-spacing: 0.01em;
     margin-bottom: 30px;
   }
-  main .intro .intro-wrapper .illustration {
-    position: absolute;
+  main .intro .intro-wrapper .illustration-wrapper {
+    width: 100%;
+    margin: 0;
+  }
+  main .intro .intro-wrapper .illustration-wrapper .illustration {
+    position: relative;
     height: 337px;
-    width: 498px;
-    top: 0;
     /* padding-left: 24px; */
     /* overflow: hidden; */
     max-width: none;
-    left: 24px;
   }
   main .shortener {
     padding: 0 24px;
@@ -681,6 +731,26 @@ footer .footer-wrapper .social-icons a:hover {
     width: 100%;
     height: 48px;
     border-radius: 5px;
+  }
+}
+@media (max-width: 575.98px) {
+  :root {
+    --padding: 24px;
+  }
+}
+@media (max-width: 767.98px) {
+  :root {
+    --padding: 24px;
+  }
+}
+@media (max-width: 991.98px) {
+  :root {
+    --padding: 24px;
+  }
+}
+@media (min-width: 1200px) {
+  :root {
+    --padding: 36px;
   }
 }
 
