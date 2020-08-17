@@ -193,6 +193,7 @@ main {
 main .intro {
   background-color: white;
   padding-bottom: 154px;
+  overflow-x: hidden;
 }
 main .intro .intro-wrapper {
   max-width: 1110px;
@@ -201,12 +202,14 @@ main .intro .intro-wrapper {
   padding-right: var(--padding);
   display: flex;
   align-items: center;
-  overflow-x: hidden;
   position: relative;
 }
 main .intro .intro-wrapper .intro-content {
-  max-width: 100%;
-  width: 565px;
+  max-width: 570px;
+  margin-right: 50px;
+}
+main .intro .intro-wrapper .intro-content .content-center {
+  width: 100%;
 }
 main .intro .intro-wrapper .intro-content h1 {
   color: #35323e;
@@ -553,7 +556,7 @@ footer .footer-wrapper .social-icons a:hover {
     position: unset;
     flex-direction: column;
     flex-flow: column-reverse;
-    overflow: hidden;
+    overflow-x: hidden;
   }
   main .intro .intro-wrapper .intro-content {
     width: 100%;
@@ -745,12 +748,12 @@ footer .footer-wrapper .social-icons a:hover {
 }
 @media (max-width: 991.98px) {
   :root {
-    --padding: 24px;
+    --padding: 36px;
   }
 }
 @media (min-width: 1200px) {
   :root {
-    --padding: 36px;
+    --padding: 0;
   }
 }
 

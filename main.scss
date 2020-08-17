@@ -250,6 +250,7 @@ main {
   .intro {
     background-color: white;
     padding-bottom: 154px;
+    overflow-x: hidden;
 
     .intro-wrapper {
       max-width: 1110px;
@@ -258,15 +259,20 @@ main {
       padding-right: var(--padding);
       display: flex;
       align-items: center;
-      overflow-x: hidden;
+      // overflow-x: hidden;
       position: relative;
 
       .intro-content {
-        max-width: 100%;
-        width: 565px;
+        max-width: 570px;
+        margin-right: 50px;
+
+
         // margin-left: 85px;
         // width: 50%;
         // flex: 1;
+        .content-center {
+          width: 100%
+        }
 
         h1 {
           color: $very-dark-blue;
@@ -732,7 +738,7 @@ footer {
         flex-direction: column;
         flex-flow: column-reverse;
         // padding: 33  7px 24px 0;
-        overflow: hidden;
+        overflow-x: hidden;
 
         .intro-content {
           width: 100%;
@@ -982,13 +988,14 @@ footer {
 // Medium devices (tablets, less than 992px)
 @media (max-width: 991.98px) {
   :root {
-    --padding: 24px;
+    --padding: 36px;
   }
+
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   :root {
-    --padding: 36px;
+    --padding: 0;
   }
 }
